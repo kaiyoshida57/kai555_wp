@@ -1,0 +1,7 @@
+.sass-parent {
+    background: #000;
+    & .sass-child {
+      color: #fff;
+      display: flex;
+    }
+  }

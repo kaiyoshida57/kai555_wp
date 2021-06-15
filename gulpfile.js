@@ -1,112 +1,92 @@
-var gulp         = require( 'gulp' );
-var sass         = require( 'gulp-sass' );
-var autoprefixer = require( 'gulp-autoprefixer' );
-var plumber      = require( 'gulp-plumber' );
-var sourcemaps   = require( 'gulp-sourcemaps' );
-var progeny   = require( 'gulp-progeny' );
-var changed      = require( 'gulp-changed' );
-var imagemin     = require( 'gulp-imagemin' );
-var imageminJpg  = require( 'imagemin-jpeg-recompress' );
-var imageminPng  = require( 'imagemin-pngquant' );
-var imageminGif  = require( 'imagemin-gifsicle' );
-var svgmin       = require( 'gulp-svgmin' );
-var concat       = require( 'gulp-concat' );
-var jshint       = require( 'gulp-jshint' );
-var rename       = require( 'gulp-rename' );
-var uglify       = require( 'gulp-uglify' );
-var browserSync  = require( 'browser-sync' );
+const gulp = require('gulp');//gulp本体
 
-// Sass
-gulp.task( 'sass', function(done){ // 2
-    gulp.src( './src/assets/sass/**/*.scss' ) // 3
-        .pipe( plumber() ) // 4
-        .pipe( progeny() ) // 4
-        .pipe( sourcemaps.init() ) // 5
-        .pipe( sass( { // 6
-            outputStyle: 'expanded'
-        } ) )
-        .pipe( autoprefixer( { // 7
-          "overrideBrowserslist": [
-            'last 2 version', 'iOS >= 8.1', 'Android >= 4.4'
-          ],
-          cascade: false
-        } ) )
-        .pipe( sourcemaps.write() ) // 5
-        .pipe( gulp.dest( './css/')) // 8
-    done();
-} );
+//scss
+const sass = require('gulp-dart-sass');// Dart Sass はSass公式が推奨 @use構文などが使える
+const plumber = require("gulp-plumber"); // エラーが発生しても強制終了させない
+const notify = require("gulp-notify"); // エラー発生時のアラート出力
+const browserSync = require("browser-sync"); // ブラウザリロード
 
 
-gulp.task( 'imagemin', function(done) {
-  // jpeg,png,gif
-  gulp.src( './src/assets/images/**/*.+(jpg|jpeg|png|gif)' ) // 1
-     .pipe( changed( './images' ) ) // 2
-     .pipe( imagemin( [ // 3
-         imageminPng(),
-         imageminJpg(),
-         imageminGif({
-             interlaced: false,
-             optimizationLevel: 3,
-             colors: 180
-         } )
-     ] ) )
-     .pipe( gulp.dest( './images/' ) );
-  // svg
-  gulp.src( './src/assets/images/**/*.+(svg)' ) // 4
-     .pipe( changed( './images' ) )
-     .pipe( svgmin() ) // 5
-     .pipe( gulp.dest( './images/' ) );
+// 入出力するフォルダを指定
+
+const srcPath = {
+  'scss': './src/scss/**/*.scss',
+  'html': './wp-content/themes/blog/*.php'
+};
+
+const distPath = {
+  'css': './wp-content/themes/blog/common/css/',
+};
+
+/**
+ * sass
+ *
+ */
+const cssSass = () => {
+  return gulp.src(srcPath.scss, {
+    sourcemaps: true
+  })
+    .pipe(
+      //エラーが出ても処理を止めない
+      plumber({
+        errorHandler: notify.onError('Error:<%= error.message %>')
+      }))
+    .pipe(sass({ outputStyle: 'expanded' })) //指定できるキー expanded compressed
+    .pipe(gulp.dest(distPath.css, { sourcemaps: './maps' })) // mapコンパイル先
+    .pipe(browserSync.stream())
+    .pipe(notify({
+      message: 'Sass compiled!',
+      onLast: true
+    }))
+}
+
+
+/**
+ * html
+ */
+const html = () => {
+  return gulp.src(srcPath.html)
+    // .pipe(gulp.dest('./wp-content/themes/blog/test/'))
+}
+
+/**
+ * ローカルサーバー立ち上げ
+ */
+const browserSyncFunc = (done) => {
+  browserSync.init(browserSyncOption);
   done();
-} );
+}
 
-// concat js file(s)
-gulp.task( 'js.concat', function(done) {
-  gulp.src( [
-      './src/assets/js/sample.js' // 1
-  ] )
-      .pipe( plumber() )
-      .pipe( jshint() ) // 2
-      .pipe( jshint.reporter( 'default' ) ) // 2
-      .pipe( concat( 'bundle.js' ) ) // 3
-      .pipe( gulp.dest( './js' ) );
+const browserSyncOption = {
+  proxy: 'http://kai555_wp.webcrow.local/', // ローカルURLなど
+  files: './wp-content/themes/blog/*.php', // 監視するファイル
+  reloadOnRestart: true
+}
+
+/**
+ * リロード
+ */
+const browserSyncReload = (done) => {
+  browserSync.reload();
   done();
-} );
+}
 
-// compress js file(s)
-gulp.task( 'js.compress', function(done) {
-  gulp.src( './js/bundle.js' )
-      .pipe( plumber() )
-      .pipe( uglify() ) // 4
-      .pipe( rename( 'bundle.min.js' ) ) // 5
-      .pipe( gulp.dest( './js' ) );
-  done();
-} );
+/**
+ *
+ * ファイル監視 ファイルの変更を検知したら、browserSyncReloadでreloadメソッドを呼び出す
+ * series 順番に実行
+ * watch('監視するファイル',処理)
+ */
+const watchFiles = () => {
+  gulp.watch(srcPath.scss, gulp.series(cssSass))
+  gulp.watch(srcPath.html, gulp.series(html, browserSyncReload))
+}
 
-// Browser Sync
-gulp.task('bs', function(done) {
-  browserSync({
-      server: { // 1
-          baseDir: "kai555_wp.webcrow.local",
-          index: "./wp-content/themes/blog/index.php"
-      }
-  });
-  done();
-});
-
-// Reload Browser
-gulp.task( 'bs-reload', function(done) {
-  browserSync.reload(); // 2
-  done();
-});
-
-
-// Default task
-gulp.task( 'default',
-  gulp.series('bs', 'sass', 'js.concat', 'js.compress', 'imagemin'),
-  function(done) { // 1
-    gulp.watch("./**/*.html", gulp.task('bs-reload')); // 2
-    gulp.watch("./src/assets/sass/**/*.scss", gulp.task('sass', 'bs-reload')); // 3
-    gulp.watch("./src/assets/js/*.js", gulp.task('js.concat', 'js.compress', 'bs-reload')); // 4
-    gulp.watch("./src/assets/image/*", gulp.task('imagemin', 'bs-reload')); // 5
-  done();
-});
+/**
+ * seriesは「順番」に実行
+ * parallelは並列で実行
+ */
+exports.default = gulp.series(
+  gulp.parallel(html, cssSass),
+  gulp.parallel(watchFiles, browserSyncFunc)
+);

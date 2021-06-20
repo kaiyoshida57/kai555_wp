@@ -1,21 +1,31 @@
 const gulp = require('gulp');//gulp本体
 
-//scss
+// Sass
 const sass = require('gulp-dart-sass');// Dart Sass はSass公式が推奨 @use構文などが使える
 const plumber = require("gulp-plumber"); // エラーが発生しても強制終了させない
 const notify = require("gulp-notify"); // エラー発生時のアラート出力
 const browserSync = require("browser-sync"); // ブラウザリロード
+const autoprefixer = require('gulp-autoprefixer');
+const postcss = require("gulp-postcss"); // css-mqpackerを使うために必要
+const mqpacker = require('css-mqpacker'); // メディアクエリをまとめる
 
+// image-min
+const imagemin = require("gulp-imagemin");
+const imageminMozjpeg = require("imagemin-mozjpeg");
+const imageminPngquant = require("imagemin-pngquant");
+const imageminSvgo = require("imagemin-svgo");
 
 // 入出力するフォルダを指定
 
 const srcPath = {
   'scss': './src/scss/**/*.scss',
-  'html': './wp-content/themes/blog/*.php'
+  'html': './wp-content/themes/blog/*.php',
+  'img': './src/images/**/*'
 };
 
 const distPath = {
   'css': './wp-content/themes/blog/common/css/',
+  'img':  './wp-content/themes/blog/common/images/'
 };
 
 /**
@@ -32,14 +42,46 @@ const cssSass = () => {
         errorHandler: notify.onError('Error:<%= error.message %>')
       }))
     .pipe(sass({ outputStyle: 'expanded' })) //指定できるキー expanded compressed
+    .pipe(autoprefixer(TARGET_BROWSERS))
+    .pipe(postcss([mqpacker()]))
     .pipe(gulp.dest(distPath.css, { sourcemaps: './maps' })) // mapコンパイル先
-    .pipe(browserSync.stream())
-    .pipe(notify({
-      message: 'Sass compiled!',
-      onLast: true
-    }))
+    .pipe(browserSync.stream()) // ページ全体リロードを防ぐ
+    //   message: 'Sass compiled!',
+    //   onLast: true
+    // }))
 }
 
+//ベンダープレフィックスを付与する条件
+const TARGET_BROWSERS = [
+  'last 2 versions',
+  'ie >= 11'
+];
+
+
+/**
+ * 画像圧縮
+ */
+const imgImagemin = () => {
+return gulp.src(srcPath.img)
+  .pipe(
+    imagemin(
+      [
+        imageminMozjpeg({
+          quality: 80
+        }),
+        imageminPngquant(),
+        imageminSvgo({
+          plugins: [{
+            removeViewbox: false
+          }]
+        })
+      ], {
+        verbose: true
+      }
+    )
+  )
+  .pipe(gulp.dest(distPath.img))
+}
 
 /**
  * html
@@ -58,7 +100,7 @@ const browserSyncFunc = (done) => {
 }
 
 const browserSyncOption = {
-  proxy: 'http://kai555_wp.webcrow.local/', // ローカルURLなど
+  proxy: 'http://kai555_wp.webcrow.local/', // 動的ローカルURLなど
   files: './wp-content/themes/blog/*.php', // 監視するファイル
   reloadOnRestart: true
 }
@@ -80,6 +122,7 @@ const browserSyncReload = (done) => {
 const watchFiles = () => {
   gulp.watch(srcPath.scss, gulp.series(cssSass))
   gulp.watch(srcPath.html, gulp.series(html, browserSyncReload))
+  gulp.watch(srcPath.img, gulp.series(imgImagemin, browserSyncReload))
 }
 
 /**
@@ -87,6 +130,6 @@ const watchFiles = () => {
  * parallelは並列で実行
  */
 exports.default = gulp.series(
-  gulp.parallel(html, cssSass),
+  gulp.parallel(html, cssSass, imgImagemin),
   gulp.parallel(watchFiles, browserSyncFunc)
 );

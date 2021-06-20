@@ -1,7 +1,8 @@
 /* A Modern CSS Reset */
 /* https://coliss.com/articles/build-websites/operation/css/css-reset-for-modern-browser.html */
 *, *::before, *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
@@ -23,7 +24,8 @@ body {
 }
 
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 img, picture {
@@ -34,6 +36,22 @@ img, picture {
 input, button, textarea, select {
   font: inherit;
 }
+h1 {
+  color: green;
+}
+h1 span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+/*
+Theme Name: blog
+*/
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -41,22 +59,19 @@ input, button, textarea, select {
   }
 
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
-h1 {
-  color: green;
-}
-h1 span {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
 
-/*
-Theme Name: blog
-*/
+@media screen and (max-width: 768px) {
+  h1 {
+    color: darkgreen;
+  }
+}
 /*# sourceMappingURL=maps/style.css.map */

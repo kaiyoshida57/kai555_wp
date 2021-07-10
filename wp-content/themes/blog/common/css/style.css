@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* A Modern CSS Reset */
 /* https://coliss.com/articles/build-websites/operation/css/css-reset-for-modern-browser.html */
 *, *::before, *::after {
@@ -9,7 +10,7 @@ body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
   margin: 0;
 }
 
-ul[role=list], ol[role=list] {
+ul[role=list], ol[role=list], li {
   list-style: none;
 }
 
@@ -36,6 +37,20 @@ img, picture {
 input, button, textarea, select {
   font: inherit;
 }
+body {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, serif;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main {
+  padding: 120px 80px 80px;
+}
+
 h1 {
   color: green;
 }
@@ -47,6 +62,57 @@ h1 span {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+}
+
+.header {
+  background-color: #fff;
+  border-bottom: solid 1px #d40000;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+.nav_item {
+  display: block;
+}
+.nav_item + .nav_item {
+  margin-left: 16px;
+}
+.nav_item a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #777;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.nav_item a:hover {
+  text-decoration: underline;
+}
+.nav_item-first {
+  margin-right: auto;
+}
+
+.aside {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffc6), to(#ffdd74));
+  background-image: linear-gradient(to bottom, #ffffc6 0%, #ffdd74 100%);
+  border-right: solid 1px #d40000;
+  height: 100vh;
+  width: 240px;
+  max-width: 240px;
 }
 
 /*

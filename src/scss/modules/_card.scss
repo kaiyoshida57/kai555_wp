@@ -1,0 +1,61 @@
+@use 'variables.scss' as var;
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  &__item {
+    border-color: #fff;
+    width: calc((100% - 24px) / 2);
+    border: solid var.$baseRed 4px;
+    box-shadow: 8px 8px 0px 0px rgb(211 0 0);
+    // background: var.$baseRed;
+    transition: transform .3s;
+    &:hover {
+      transform: translateY(-20px);
+    }
+  }
+  &__item:nth-of-type(n + 3) {
+    margin-top: 40px;
+  }
+  &__link {
+    display: block;
+    padding: 0 16px 16px 16px;
+    text-decoration: none;
+    transition: transform .3s;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  &__image {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    img {
+      margin: 0 auto;
+      box-shadow: 1px 4px 10px #000;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: var.$baseRed;
+    background-color: white;
+    padding: 5px 16px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__text {
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var.$baseGrey;
+    margin-top: 24px;
+  }
+}

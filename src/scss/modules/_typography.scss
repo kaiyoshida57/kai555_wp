@@ -1,0 +1,55 @@
+@use 'variables.scss' as var;
+
+.heading-lv1 {
+  font-size: 40px;
+  line-height: 1.5;
+  color: #222;
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
+}
+.heading-lv2 {
+  font-size: 36px;
+  line-height: 1.5;
+  text-align: center;
+  color: var.$baseRed;
+  text-shadow:
+    var.$baseYellow 2px 0px,  var.$baseYellow -2px 0px,
+    var.$baseYellow 0px -2px, var.$baseYellow 0px 2px,
+    var.$baseYellow 2px 2px , var.$baseYellow -2px 2px,
+    var.$baseYellow 2px -2px, var.$baseYellow -2px -2px,
+    var.$baseYellow 1px 2px,  var.$baseYellow -1px 2px,
+    var.$baseYellow 1px -2px, var.$baseYellow -1px -2px,
+    var.$baseYellow 2px 1px,  var.$baseYellow -2px 1px,
+    var.$baseYellow 2px -1px, var.$baseYellow -2px -1px;
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+
+
+.font-mincho {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, serif;
+}
+.text {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 32px;
+  &:first-child {
+    margin-top: 0;
+  }
+  & + & {
+    margin-top: 16px;
+  }
+}
+.text-l {
+  font-size: 30px;
+}
+
+.note {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 16px;
+  color: var.$baseGrey;
+}

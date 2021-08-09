@@ -3,6 +3,8 @@ Theme Name: blog
 */
 @use './base';
 @use './variables';
-@use './title';
+@use './_typography';
 @use './header';
 @use './sidebar';
+@use './card';
+@use './layout';

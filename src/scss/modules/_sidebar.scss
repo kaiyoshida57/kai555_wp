@@ -2,8 +2,27 @@
 
 .aside {
   background-image: linear-gradient(to bottom, #ffffc6 0%, #ffdd74 100%);
-  border-right: solid 1px #d40000;
-  height: 100vh;
+  // border-right: solid 1px #d40000;
+  min-height: 100vh;
   width: 240px;
   max-width: 240px;
+  z-index: 1;
+
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+  }
+}
+
+.sidenav {
+  &_item + * {
+    margin-top: 2px;
+  }
+  &_item a{
+    color: var.$baseBlue;
+    font-size: 20px;
+    // border: 1px solid #fff;
+    position: relative;
+    width: 100%;
+  }
 }

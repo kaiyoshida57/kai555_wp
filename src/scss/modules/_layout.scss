@@ -1,0 +1,62 @@
+@use 'variables.scss' as var;
+
+.section-guidance {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: double 1px var.$baseRed;
+}
+
+.inner {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 24px;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  &__character {
+    width: 200px;
+    &__caption {
+      color: var.$baseRed;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    &__caption strong{
+      text-align: center;
+      display: block;
+    }
+  }
+  &__box {
+    background: #fff;
+    border: solid 4px var.$subYellow;
+    text-align: center;
+    padding: 14px 10px;
+    flex: 1;
+    margin-left: 80px;
+    position: relative;
+    &::before {
+      content: "";
+      background: #fff;
+      position: absolute;
+      border: #fcf264 solid 3px;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      left: -3%;
+      top: 13%;
+    }
+    &::after {
+      content: "";
+      background: #fff;
+      position: absolute;
+      border: #fcf264 solid 2px;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      left: -6%;
+      top: 17%;
+    }
+  }
+}

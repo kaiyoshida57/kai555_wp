@@ -17,13 +17,17 @@
           </a>
         </li>
         <li class="nav_item">
-          <a href="<?php echo esc_url(home_url()); ?>/news/">NEWS</a>
+          <a href="<?php echo esc_url(home_url()); ?>/articles/" class="font-mincho">ARTICLES</a>
         </li>
         <li class="nav_item">
-          <a href="<?php echo esc_url(home_url()); ?>/about/">ABOUT</a>
+          <a href="<?php echo esc_url(home_url()); ?>/other/" class="font-mincho">OTHER ARTICLES</a>
         </li>
         <li class="nav_item">
-          <a href="<?php echo esc_url(home_url()); ?>/profile/">PROFILE</a>
+          <a href="<?php echo esc_url(home_url()); 
+          ?>/about/" class="font-mincho">ABOUT</a>
+        </li>
+        <li class="nav_item">
+          <a href="<?php echo esc_url(home_url()); ?>/profile/" class="font-mincho">PROFILE</a>
         </li>
       </ul>
     </nav><!-- /.nav -->

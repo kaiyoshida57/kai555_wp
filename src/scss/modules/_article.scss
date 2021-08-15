@@ -18,10 +18,11 @@
     &:hover {
       transform: translateY(-5px);
     }
-    a {
+    & > a {
       padding: 16px;
       transition: all .3s;
       display: block;
+      position: relative;
     }
     a img {
       max-height: 200px;

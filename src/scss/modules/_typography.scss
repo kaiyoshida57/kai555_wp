@@ -28,7 +28,6 @@
 }
 
 
-
 .font-mincho {
   font-family: "游明朝体", "Yu Mincho", YuMincho, serif;
 }
@@ -60,4 +59,85 @@
   line-height: 1.4;
   color: var.$baseOrange;
   text-align: right;
+}
+.textTime + .listTag{
+  margin-top: 16px;
+}
+
+.listTag {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  &__item{
+    border-radius: 40px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #fff;
+    font-weight: bold;
+    padding: 4px 7px;
+    text-align: right;
+    &.result {
+      background-color: var.$baseRed;
+    }
+    &.transfer {
+      background-color: var.$baseOrange;
+    }
+    &.football {
+      background-color: var.$basePink;
+    }
+    &.news {
+      background-color: var.$baseBlue;
+    }
+    &.production {
+      background-color: var.$baseGreen;
+    }
+    //other
+    &.entertainment {
+      background-color: var.$baseRed;
+    }
+    &.music {
+      background-color: var.$basePink;
+    }
+    &.guitar {
+      background-color: var.$subPurple;
+    }
+    &.comic {
+      background-color: var.$basePurple;
+    }
+    &.electronics {
+      background-color: var.$baseGreen;
+    }
+    &.movie {
+      background-color: var.$baseOrange;
+    }
+    &.anime {
+      background-color: var.$subBlue;
+    }
+    &.game {
+      background-color: var.$baseBlue;
+    }
+    &.everyday {
+      background-color: var.$baseGrey;
+    }
+    &.food {
+      background-color: var.$subRed;
+    }
+    &.training {
+      background-color: var.$thirdYellow;
+    }
+    &.technology {
+      background-color: royalblue;
+    }
+    &.web {
+      background-color: aqua;
+    }
+    &.electronics {
+      background-color: greenyellow;
+    }
+  }
+  &__item+&__item{
+    margin-left: .4em;
+  }
 }

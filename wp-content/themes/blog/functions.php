@@ -75,13 +75,13 @@ function create_my_post_types() {
         'revisions'
       ),
       'menu_position' => 5,
-      'taxonomies' => array('other_cat', 'other_tag')
+      'taxonomies' => array('cat_other', 'tag_other')
     )
   );
 
   // taxonomy category
   register_taxonomy(
-    'other_cat',
+    'cat_other',
     'other',
     array(
       'label' => 'その他投稿カテゴリー',
@@ -100,7 +100,7 @@ function create_my_post_types() {
   
   // taxonomy tag
   register_taxonomy(
-    'other_tag',
+    'tag_other',
     'other',
     array(
       'label' => 'その他投稿タグ',

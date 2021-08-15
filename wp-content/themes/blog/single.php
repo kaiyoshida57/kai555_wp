@@ -4,7 +4,8 @@
 posts archive
  */
 ?>
-
+<?php
+?>
 <?php get_header(); ?>
 
 <div class="wrapper">
@@ -22,6 +23,21 @@ posts archive
     更新日時：<?php the_modified_date('Y-m-d'); ?>
     <?php endif; ?>
     </p>
+    
+    
+    <?php
+      //タグはある場合だけループ出力
+      global $post;
+      $tags = [];  //タグを入れるの配列の初期化
+      if( get_the_tags( $post->ID ) ) {
+        echo '<ul class="listTag">';
+        foreach ( ( get_the_tags( $post->ID ) ) as $tag ) {
+          array_push($tags, $tag->slug);
+          echo '<li class="listTag__item '.$tag->slug .'"> '.$tag->name; '.</li>';
+        }
+        echo '</ul>';
+      }
+    ?>
 
     <div class="postContent">
       <?php the_content(); ?>

@@ -13,12 +13,8 @@ posts archive
 
   <main class="main" role="main">
 
-    <h1><span>NEWS Page!</span></h1>
-    <section>
-      <h2 class="heading">
-        最新のNEWS
-        <span>Latest Posts</span>
-      </h2>
+    <h1 class="heading-lv2">Articles - 投稿・お知らせ</h1>
+    <section class="articleCard">
       
       <?php
         if( have_posts() ) :

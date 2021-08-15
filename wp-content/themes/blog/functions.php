@@ -29,7 +29,14 @@ add_theme_support( 'title-tag' );
 // アイキャッチ画像を有効にする
 add_theme_support('post-thumbnails');
 
-/* デフォルトは無効なので投稿アーカイブの作成 */
+// the_dateで同じ日付でも日付を表示
+function my_the_post() {
+  global $previousday;
+  $previousday = '';
+}
+add_action( 'the_post', 'my_the_post' );
+
+// デフォルトは無効なので投稿アーカイブの作成
 function post_has_archive( $args, $post_type ) {
   if ( 'post' == $post_type ) {
     $args['rewrite'] = true;

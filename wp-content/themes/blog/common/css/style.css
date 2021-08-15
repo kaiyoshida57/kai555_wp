@@ -37,6 +37,10 @@ img, picture {
 input, button, textarea, select {
   font: inherit;
 }
+
+a {
+  text-decoration: none;
+}
 body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
@@ -48,7 +52,7 @@ body {
 }
 
 .main {
-  padding: 120px 80px 80px;
+  padding: 100px 80px 80px;
   background: #f9f9f9;
   width: calc(100% - 240px);
   margin-left: auto;
@@ -97,6 +101,14 @@ a {
   line-height: 1.5;
   margin-top: 16px;
   color: #777;
+}
+
+.textTime {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #D46A00;
+  text-align: right;
 }
 
 .header {
@@ -307,6 +319,96 @@ a {
   height: 15px;
   left: -6%;
   top: 17%;
+}
+
+.postContent {
+  margin-top: 32px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 24px 40px;
+}
+.postContent p + h2,
+.postContent p + h3,
+.postContent p + h4,
+.postContent p + h5 {
+  margin-top: 24px;
+}
+.postContent h2 + p {
+  margin-top: 16px;
+}
+.postContent h2 {
+  font-size: 24px;
+  line-height: 1.4;
+  background-color: #d40000;
+  padding: 6px 10px;
+  color: #fff;
+  position: relative;
+}
+.postContent p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.articleCard {
+  margin-top: 32px;
+  width: 100%;
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 0;
+     -moz-column-gap: 0;
+          column-gap: 0;
+}
+.articleCard__item {
+  margin: 16px;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+  -webkit-box-shadow: 8px 10px 10px -10px rgba(0, 0, 0, 0.8);
+          box-shadow: 8px 10px 10px -10px rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  border: solid 4px #fff264;
+  background-color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.articleCard__item:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.articleCard__item a {
+  padding: 16px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: block;
+}
+.articleCard__item a img {
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+.articleCard__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 16px;
+  color: #d40000;
+}
+.articleCard__text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #777;
+  margin-top: 16px;
+}
+.articleCard__time {
+  display: block;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #D46A00;
+  margin-top: 8px;
 }
 
 /*

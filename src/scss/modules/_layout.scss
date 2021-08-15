@@ -60,3 +60,31 @@
     }
   }
 }
+
+.postContent {
+  margin-top: 32px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 24px 40px;
+  p +h2,
+  p +h3,
+  p +h4,
+  p +h5{
+    margin-top: 24px;
+  }
+  h2+p {
+    margin-top: 16px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 1.4;
+    background-color: var.$baseRed;
+    padding: 6px 10px;
+    color: #fff;
+    position: relative;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}

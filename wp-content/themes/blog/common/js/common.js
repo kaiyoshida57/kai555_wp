@@ -3,7 +3,7 @@ console.log('common');
 $(function() {
   // sidebar static
   const sidebar = $('.aside');
-  mainArea = $('.main');
+  const mainArea = $('.main');
   offset = mainArea.offset();
   $(window).scroll(function() {
     if ($(window).scrollTop() > offset.top ) {

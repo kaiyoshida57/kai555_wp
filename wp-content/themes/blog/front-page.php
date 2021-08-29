@@ -13,7 +13,7 @@ top page
   <main class="main" role="main">
     <div class="intro">
       <figure class="intro__character">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/common/images/icon_dinosaur.svg" alt="dinosaur" width="200" height="200">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/common/images/img_saurus.png" alt="dinosaur" width="200" height="">
         <figcaption class="intro__character__caption">
           <strong>管理人</strong>
         </figcaption>

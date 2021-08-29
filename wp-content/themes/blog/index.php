@@ -4,6 +4,18 @@
 posts archive
  */
 ?>
+<?php 
+$args = array(
+  'orderby'            => 'description',
+  'order'              => 'ASC',
+  'hide_empty'         => true,    //投稿のないタームも取得するかどうか
+  'fields'             => 'all',   //戻り値に何を返すか
+  'hierarchical'       => true,    //親タームのIDを指定するとその子孫タームを全て返す
+); 
+$terms = get_tags( $args );
+$list_src = "";
+?>
+
 
 <?php get_header(); ?>
 
@@ -14,6 +26,16 @@ posts archive
   <main class="main" role="main">
 
     <h1 class="heading-lv2">Articles - 投稿・お知らせ</h1>
+
+    <p class="text">タグ一覧</p>
+    <?php 
+    //カテゴリをリンク付きリストで出力
+    foreach ( $terms as $t ) {
+      $list_src .= '<li class="cat-item"><a href="'. get_term_link($t) .'">'. $t->name .' ('. $t->count .')</a></li>';
+    }
+    echo '<ul class="listCat">'. $list_src .'</ul>';
+    ?>
+
     <section class="articleCard">
       
       <?php

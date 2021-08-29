@@ -1,10 +1,9 @@
 <?php
 /*
-other投稿一覧
-other archive*/
+カスタムタクソノミーotherアーカイブ
+other taxonomy archive
+ */
 ?>
-
-
 
 <?php get_header(); ?>
 
@@ -15,22 +14,14 @@ other archive*/
   <main class="main" role="main">
 
     <h1 class="heading-lv2">Other Articles - その他投稿</h1>
-
-    <p class="text">カテゴリー一覧</p>
-    <ul class="listCat">
+    <p class="text">
       <?php
-        // カテゴリを階層維持してlist出力
-        $my_tax = 'cat_other';
-        $terms = get_terms( $my_tax, array('hide_empty' => true) );
-        echo walk_category_tree( $terms, 0 , array(
-            'style' => 'list',
-            'show_count' => true,
-            'hide_empty' => true,
-        ));
+      // アーカイブで現在のターム名を出力させる
+      $nowterm = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+      echo $nowterm->name;
       ?>
-    </ul>
-
-
+      の投稿一覧
+    </p>
     <section class="articleCard">
       
       <?php

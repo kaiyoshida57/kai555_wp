@@ -1,5 +1,15 @@
 @use 'variables.scss' as var;
 
+.wrapper {
+  display: flex;
+}
+.main {
+  padding: 100px 48px 80px;
+  background: #f9f9f9;
+  width: calc(100% - 240px);
+  margin-left: auto;
+}
+
 .section-guidance {
   margin-top: 80px;
   padding-top: 32px;

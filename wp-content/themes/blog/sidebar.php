@@ -21,11 +21,10 @@
     </ul>
     <ul class="sidenav_listCat">
       <li class="sidenav_item sidenav_item-first">
-        <a href="<?php echo esc_url(home_url()); ?>">
+        <!-- <a href="<?php echo esc_url(home_url()); ?>">
           <?php echo the_category(); ?>
-        </a>
+        </a> -->
       </li>
-      <li>最新投稿</li>
       <li>検索</li>
       <li>年別アーカイブ</li>
       <li>人気記事一覧</li>

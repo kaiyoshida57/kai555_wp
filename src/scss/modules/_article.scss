@@ -1,5 +1,31 @@
 @use 'variables.scss' as var;
 
+.heading-lv2 + .listCat {
+  margin-top: 32px;
+}
+.listCat {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: var.$baseBeige;
+  border: solid 2px var.$baseYellow;
+  padding: 8px 10px;
+  // & > .cat-item {
+  //   display: flex;
+  // }
+  & > .cat-item + .cat-item {
+    margin-left: 1em;
+  }
+  & > .cat-item .children {
+    padding-left: 1em;
+  }
+  .cat-item {
+    font-size: 14px;
+    line-height: 1.4;
+    display: inline-block;
+  }
+}
+
 .articleCard {
   margin-top: 32px;
   width: 100%;

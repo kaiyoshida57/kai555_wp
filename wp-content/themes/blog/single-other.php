@@ -1,7 +1,7 @@
 <?php
 /*
-通常の投稿詳細
-posts single
+otherの投稿詳細
+other posts single
  */
 ?>
 <?php
@@ -26,17 +26,15 @@ posts single
     
     
     <?php
-      //タグはある場合だけループ出力
+      //カテゴリはある場合だけループ出力
       global $post;
-      $tags = [];  //タグを入れるの配列の初期化
-      if( get_the_tags( $post->ID ) ) {
-        echo '<ul class="listTag">';
-        foreach ( ( get_the_tags( $post->ID ) ) as $tag ) {
-          array_push($tags, $tag->slug);
-          echo '<li class="listTag__item '.$tag->slug .'"> '.$tag->name; '.</li>';
+      $slug = [];  //カテゴリを入れる配列の初期化
+      $terms = get_the_terms($post->ID, 'cat_other');
+      echo '<ul class="listTag">';
+        foreach ( $terms as $term ) {
+          echo '<li class="listTag__item '.$term->slug.'">'.$term->name.'</li>';
         }
         echo '</ul>';
-      }
     ?>
 
     <div class="postContent">
@@ -44,9 +42,9 @@ posts single
     </div>
 
     <p class="text">
-      <a href="/articles/">投稿一覧 へ戻る →</a>
+      <a href="/other/">その他投稿一覧 へ戻る →</a>
     </p>
-
+    
   </main>
 
 </div>

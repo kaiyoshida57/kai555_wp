@@ -46,6 +46,7 @@ function post_has_archive( $args, $post_type ) {
 }
 add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 
+
 // -------カスタム投稿----------
 
 function create_my_post_types() {
@@ -76,6 +77,36 @@ function create_my_post_types() {
       ),
       'menu_position' => 5,
       'taxonomies' => array('cat_other', 'tag_other')
+    )
+  );
+
+  register_post_type(
+    'profile',
+    array(
+      'label' => 'プロフィール',
+      'labels' => array(
+        'add_new' => '新規プロフィール追加',
+        'edit_item' => 'プロフィールの編集',
+        'view_item' => 'プロフィールを表示',
+        'search_items' => 'プロフィールを検索',
+        'not_found' => 'プロフィールは見つかりませんでした。',
+        'not_found_in_trash' => 'ゴミ箱にプロフィールはありませんでした。',
+      ),
+      'public' => true,
+      'description' => 'カスタム投稿タイプ「プロフィール」の説明文です。',
+      'hierarchicla' => false, 
+      'has_archive' => true,
+      'show_in_rest' => true,
+      'supports' => array(
+        'title',
+        'editor',
+        'thumbnail',
+        'excerpt', 
+        'custom-fields',
+        'revisions'
+      ),
+      'menu_position' => 6,
+      'taxonomies' => array('cat_profile', 'tag_profile')
     )
   );
 
@@ -116,7 +147,7 @@ function create_my_post_types() {
       'update_count_callback' => '_update_post_term_count', 
       'show_in_rest' => true //Gutenberg で表示
     )
-    );
+  );
 }
 add_action('init', 'create_my_post_types'); 
 

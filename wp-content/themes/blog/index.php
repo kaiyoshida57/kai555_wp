@@ -49,6 +49,9 @@ $list_src = "";
         endif;
       ?>
     </section>
+
+    <?php the_posts_pagination(); ?>
+
   </main>
 
 </div>

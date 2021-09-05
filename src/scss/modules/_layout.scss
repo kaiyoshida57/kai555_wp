@@ -2,9 +2,10 @@
 
 .wrapper {
   display: flex;
+  min-height: 100vh;
 }
 .main {
-  padding: 100px 48px 80px;
+  padding: 100px 56px 80px;
   background: #f9f9f9;
   width: calc(100% - 240px);
   margin-left: auto;
@@ -126,4 +127,35 @@
   li+li {
     margin-top: 16px;
   }
+}
+
+//pagination
+
+.nav-links {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  .page-numbers {
+    border: solid 1px var.$baseRed;
+    background-color: var.$baseRed;
+    padding: 8px 10px;
+    color: #fff;
+    &.current {
+      color: inherit;
+    }
+  }
+}
+//paginationのデフォルトの文字を無効化（公式方法）
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }

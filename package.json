@@ -4,6 +4,7 @@
   "description": "WordPress site",
   "main": "index.js",
   "dependencies": {
+    "autoprefixer": "^10.3.4",
     "css-mqpacker": "^7.0.0",
     "del": "^6.0.0",
     "gulp-dart-sass": "^1.0.2",

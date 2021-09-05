@@ -1,0 +1,20 @@
+@use 'variables.scss' as var;
+
+.txt + .table {
+  margin-top: 40px;
+}
+.table {
+  border: 1px;
+  width: 100%;
+  margin: 0 auto;
+  border-spacing: 0;
+  border: solid 1px #eee;
+  td,th {
+    padding: 10px 20px;
+
+  }
+  th {
+    background-color: #eee;
+    letter-spacing: 0.2em;
+  }
+}

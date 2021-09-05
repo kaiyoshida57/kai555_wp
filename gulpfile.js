@@ -53,8 +53,8 @@ const cssSass = () => {
 
 //ベンダープレフィックスを付与する条件
 const TARGET_BROWSERS = [
-  'last 2 versions',
-  'ie >= 11'
+  // 'last 2 versions',
+  '> 5%'
 ];
 
 

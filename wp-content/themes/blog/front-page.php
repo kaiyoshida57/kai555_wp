@@ -92,13 +92,44 @@ top page
     </section>
 
 
-      <hr>
-      <hr>
-      画像など
-      <hr>
-      <hr>
-      選手スライダーなど、一覧リンク
-      <hr>
+
+    <?php
+      $args = array(
+        'post_type' => 'profile', 
+        'posts_per_page' => 3,
+        'no_found_rows' => true,  //ページャーを使う時はfalseに。
+        'orderby' => 'rand',
+      );
+        $the_query = new WP_Query($args);
+        if ($the_query->have_posts()) :
+          while ($the_query->have_posts()) : $the_query->the_post();
+        ?>
+        <article class="slide__item">
+        <?php
+          $profile_textarea = post_custom('profile_textarea');
+          $img = get_post_meta(get_the_ID(), 'profile_image', true);
+          $imgUrl = wp_get_attachment_url($img);
+        ?>
+
+          <a href="<?php the_permalink(); ?>" class="slide__link" >
+            <h3 class="slide__title"><?php the_title(); ?></h3>
+
+            <figure class="slide__image">
+              <?php echo wp_get_attachment_image( $img , 'thumbnail' ); ?>
+            </figure>
+
+            <p class="slide__text">
+              <?php echo $profile_textarea; ?>
+            </p>
+
+          </a>
+        </article>
+
+        <?php
+            endwhile;
+          endif;
+          wp_reset_postdata();
+        ?>
     
   </main>
 

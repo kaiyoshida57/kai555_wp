@@ -28,13 +28,13 @@ other posts single
     <?php
       //カテゴリはある場合だけループ出力
       global $post;
-      $slug = [];  //カテゴリを入れる配列の初期化
+      $slug = [];  //カテゴリを入れるの配列の初期化
       $terms = get_the_terms($post->ID, 'cat_other');
       echo '<ul class="listTag">';
-        foreach ( $terms as $term ) {
-          echo '<li class="listTag__item '.$term->slug.'">'.$term->name.'</li>';
-        }
-        echo '</ul>';
+      foreach ( $terms as $term ) {
+        echo '<li class="listTag__item '.$term->slug.'">'.$term->name.'</li>';
+      }
+      echo '</ul>';
     ?>
 
     <div class="postContent">

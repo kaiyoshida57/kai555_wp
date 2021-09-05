@@ -44,7 +44,11 @@ other archive*/
         endif;
       ?>
     </section>
+
+    <?php the_posts_pagination(); ?>
+
   </main>
+
 
 </div>
 <?php get_footer(); ?>

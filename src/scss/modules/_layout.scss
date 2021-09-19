@@ -11,7 +11,8 @@
   margin-left: auto;
 }
 
-.section-guidance {
+.section-guidance,
+.section-slide {
   margin-top: 80px;
   padding-top: 32px;
   border-top: double 1px var.$baseRed;
@@ -29,6 +30,9 @@
   align-items: flex-start;
   &__character {
     width: 200px;
+    img {
+      transform: rotate3d(0, 1, 0.1, 180deg);
+    }
     &__caption {
       color: var.$baseRed;
       font-size: 14px;
@@ -43,7 +47,7 @@
     background: #fff;
     border: solid 4px var.$subYellow;
     text-align: center;
-    padding: 14px 10px;
+    padding: 20px 16px;
     flex: 1;
     margin-left: 80px;
     position: relative;
@@ -158,4 +162,9 @@
   position: absolute;
   width: 1px;
   word-wrap: normal !important;
+}
+
+//other
+.text-center {
+  text-align: center;
 }

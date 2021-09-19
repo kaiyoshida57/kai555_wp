@@ -17,6 +17,9 @@ function my_scripts() {
   // part css/js
   if ( is_singular('news') ) {
     wp_enqueue_script( 'smart-single-script', get_template_directory_uri() . 'common/js/news.js', "", '1.0.0', true );
+  } elseif ( is_home() || is_front_page() ) {
+    wp_enqueue_script( 'slick-script', get_template_directory_uri() . '/common/js/slick.min.js', "", '1.0.0', true );
+    wp_enqueue_script( 'top-script', get_template_directory_uri() . '/common/js/top.js', "", '1.0.0', true );
   }
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts' );

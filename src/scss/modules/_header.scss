@@ -3,6 +3,17 @@
 .header {
   background-color: #fff;
   border-bottom: solid 3px var.$baseRed;
+  position: relative;
+  &::before {
+      content: "";
+      border-bottom: solid 3px #d40000;
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      z-index: 2;
+  }
 }
 .nav {
   max-width: 1200px;

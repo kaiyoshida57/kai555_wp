@@ -1,0 +1,48 @@
+@use 'variables.scss' as var;
+
+.slide + .button,
+.slide + p {
+  margin-top: 60px;
+}
+
+@mixin button() {
+  padding: 16px 12px;
+  background-color: var.$baseYellow;
+  // border: solid 2px var.$baseYellow;
+  // box-shadow: inset 1px 1px 1px #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: var.$baseRed;
+  position: relative;
+  transition: all .3s;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 57px 25px;
+    border-color: transparent transparent #fff264 transparent;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 57px 25px 0 0;
+    border-color: #fff264 transparent transparent transparent;
+  }
+  &:hover {
+    color: var.$baseBlue;
+  }
+}
+.button--link {
+  @include button;
+
+}

@@ -22,8 +22,30 @@
     var.$baseYellow 1px -2px, var.$baseYellow -1px -2px,
     var.$baseYellow 2px 1px,  var.$baseYellow -2px 1px,
     var.$baseYellow 2px -1px, var.$baseYellow -2px -1px;
+  position: relative;
   @media screen and (max-width: 768px) {
     font-size: 28px;
+  }
+  &::after {
+    content: "";
+    background: url(/wp-content/themes/blog/common/images/icon_gun.svg) no-repeat center;
+    position: relative;
+    right: -20px;
+    top: -2px;
+    width: 54px;
+    height: 54px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.heading-lv3 {
+  font-size: 30px;
+  line-height: 1.5;
+  padding-left: 16px;
+  color: var.$baseRed;
+  border-left: solid 4px var.$baseRed;
+  @media screen and (max-width: 768px) {
+    font-size: 22px;
   }
 }
 

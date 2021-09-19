@@ -13,7 +13,7 @@
       <ul class="nav_list">
         <li class="nav_item nav_item-first">
           <a href="<?php echo esc_url(home_url()); ?>" aria-label="blog's logo">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/common/images/logo_main.svg" alt="SYUMI BLOG 趣味ブログ" width="184" height="">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/common/images/logo_main.svg" alt="SYUMI BLOG 趣味ブログ" width="170" height="">
           </a>
         </li>
         <li class="nav_item">

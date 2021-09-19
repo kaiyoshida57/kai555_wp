@@ -3,6 +3,8 @@ Theme Name: blog
 */
 @use './base';
 @use './variables';
+@use './slick';
+@use './slick-theme';
 @use './_typography';
 @use './header';
 @use './sidebar';
@@ -10,3 +12,4 @@ Theme Name: blog
 @use './layout';
 @use './article';
 @use './table';
+@use './button';

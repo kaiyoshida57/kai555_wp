@@ -67,6 +67,9 @@
 .text-l {
   font-size: 30px;
 }
+.text-red {
+  color: var.$baseRed;
+}
 
 .note {
   font-size: 14px;
@@ -86,12 +89,36 @@
   margin-top: 16px;
 }
 
+.sidenav_item > .icon_tag,
+.text > .icon_tag,
+.sidenav_item > .icon_category,
+.text > .icon_category {
+  margin-left: 6px;
+}
+.icon_tag {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(/wp-content/themes/blog/common/images/icon_tag.svg) no-repeat center;
+  background-size: contain;
+  vertical-align: -1px;
+}
+.icon_category {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(/wp-content/themes/blog/common/images/icon_category.svg) no-repeat center;
+  background-size: contain;
+  vertical-align: -1px;
+}
+
 .listTag {
   position: relative;
   display: inline-block;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  flex-wrap: wrap;
   &__item{
     border-radius: 40px;
     font-size: 12px;
@@ -100,6 +127,7 @@
     font-weight: bold;
     padding: 4px 7px;
     text-align: right;
+    margin-top: 6px;
     &.result {
       background-color: var.$baseRed;
     }
@@ -108,6 +136,12 @@
     }
     &.football {
       background-color: var.$basePink;
+    }
+    &.premierleague {
+      background-color: var.$basePurple;
+    }
+    &.arsenalnews {
+      background-color: var.$subRed;
     }
     &.news {
       background-color: var.$baseBlue;

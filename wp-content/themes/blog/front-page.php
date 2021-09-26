@@ -28,7 +28,7 @@ top page
         <p class="text">
           特に、私が好きなイングランドのサッカークラブ
           <strong class="text-l">
-            <a href="https://www.arsenal.com/" rel="noopener">Arsenal FC</a>
+            <a href="https://www.arsenal.com/" target="_blank" rel="noopener" class="text-red">Arsenal FC</a>
           </strong>
           を紹介していきます。
         </p>
@@ -115,7 +115,7 @@ top page
           <?php
             $profile_textarea = post_custom('profile_textarea');
             $img = get_post_meta(get_the_ID(), 'profile_image', true);
-            $imgUrl = wp_get_attachment_url($img);
+            // $imgUrl = wp_get_attachment_url($img);
           ?>
 
             <a href="<?php the_permalink(); ?>" class="slide__link" >

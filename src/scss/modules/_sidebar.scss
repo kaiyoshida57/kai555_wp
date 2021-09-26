@@ -33,4 +33,30 @@
       text-decoration: underline;
     }
   }
+  &_text a{
+    font-size: 14px;
+    line-height: 1.4;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.tagBox {
+  background-color: var.$fourthYellow;
+  padding: 14px;
+}
+
+// WP標準タグ
+.cat-item {
+  .children {
+    padding-left: 1em;
+  }
+}
+.cat-item a {
+  font-size: 14px;
+  line-height: 1.4;
+  &:hover {
+    text-decoration: underline;
+  }
 }

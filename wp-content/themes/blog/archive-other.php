@@ -16,7 +16,7 @@ other archive*/
 
     <h1 class="heading-lv2">Other Articles - その他投稿</h1>
 
-    <p class="text">カテゴリー一覧</p>
+    <p class="text">カテゴリー一覧<span class="icon_category"></span></p>
     <ul class="listCat">
       <?php
         // カテゴリを階層維持してlist出力

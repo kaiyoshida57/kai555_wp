@@ -244,11 +244,11 @@ a {
 }
 
 .slick-prev {
-  left: -25px;
+  left: -30px;
 }
 [dir=rtl] .slick-prev {
   left: auto;
-  right: -25px;
+  right: -30px;
 }
 .slick-prev:before {
   content: "←";
@@ -258,10 +258,10 @@ a {
 }
 
 .slick-next {
-  right: -25px;
+  right: -30px;
 }
 [dir=rtl] .slick-next {
-  left: -25px;
+  left: -30px;
   right: auto;
 }
 .slick-next:before {
@@ -389,6 +389,10 @@ a {
   font-size: 30px;
 }
 
+.text-red {
+  color: #d40000;
+}
+
 .note {
   font-size: 14px;
   line-height: 1.5;
@@ -408,12 +412,38 @@ a {
   margin-top: 16px;
 }
 
+.sidenav_item > .icon_tag,
+.text > .icon_tag,
+.sidenav_item > .icon_category,
+.text > .icon_category {
+  margin-left: 6px;
+}
+
+.icon_tag {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(/wp-content/themes/blog/common/images/icon_tag.svg) no-repeat center;
+  background-size: contain;
+  vertical-align: -1px;
+}
+
+.icon_category {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(/wp-content/themes/blog/common/images/icon_category.svg) no-repeat center;
+  background-size: contain;
+  vertical-align: -1px;
+}
+
 .listTag {
   position: relative;
   display: inline-block;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 .listTag__item {
   border-radius: 40px;
@@ -423,6 +453,7 @@ a {
   font-weight: bold;
   padding: 4px 7px;
   text-align: right;
+  margin-top: 6px;
 }
 .listTag__item.result {
   background-color: #d40000;
@@ -432,6 +463,12 @@ a {
 }
 .listTag__item.football {
   background-color: #D4006A;
+}
+.listTag__item.premierleague {
+  background-color: #6A00D4;
+}
+.listTag__item.arsenalnews {
+  background-color: #B30000;
 }
 .listTag__item.news {
   background-color: #3282c9;
@@ -561,6 +598,30 @@ a {
 .sidenav_item a:hover {
   text-decoration: underline;
 }
+.sidenav_text a {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.sidenav_text a:hover {
+  text-decoration: underline;
+}
+
+.tagBox {
+  background-color: #fffbeb;
+  padding: 14px;
+}
+
+.cat-item .children {
+  padding-left: 1em;
+}
+
+.cat-item a {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.cat-item a:hover {
+  text-decoration: underline;
+}
 
 .card {
   display: flex;
@@ -640,6 +701,10 @@ a {
   border-top: double 1px #d40000;
 }
 
+.heading-lv2 + .inner {
+  margin-top: 40px;
+}
+
 .inner {
   background-color: #fff;
   border-radius: 4px;
@@ -659,8 +724,15 @@ a {
 }
 .intro__character__caption {
   color: #d40000;
+  background-color: #fff;
   font-size: 14px;
   line-height: 1.6;
+  text-align: center;
+  margin-top: 16px;
+  padding: 4px 1px;
+  border: solid 2px #d30000;
+  max-width: 90px;
+  margin: 0 auto;
 }
 .intro__character__caption strong {
   text-align: center;
@@ -715,7 +787,8 @@ a {
   margin-top: 24px;
 }
 .postContent h2 + p,
-.postContent h2 + ul {
+.postContent h2 + ul,
+.postContent h3 + ul {
   margin-top: 16px;
 }
 .postContent h2 {
@@ -787,6 +860,74 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+.postContent + .text-center {
+  margin-top: 64px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }
 
 .heading-lv2 + .listCat {
@@ -895,7 +1036,11 @@ a {
   display: block;
   padding: 22px 24px;
   position: relative;
+  transition: transform 0.3s;
   z-index: 1;
+}
+.profileCard__link:hover {
+  transform: scale(1.05);
 }
 .profileCard__link::after {
   content: "";

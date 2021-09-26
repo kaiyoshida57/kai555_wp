@@ -43,8 +43,8 @@ posts single
       <?php the_content(); ?>
     </div>
 
-    <p class="text">
-      <a href="/articles/">投稿一覧 へ戻る →</a>
+    <p class="text-center">
+      <a href="<?php echo esc_url(home_url()); ?>/articles/" class="button button--link">投稿一覧へ戻る</a>
     </p>
 
   </main>

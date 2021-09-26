@@ -41,8 +41,8 @@ other posts single
       <?php the_content(); ?>
     </div>
 
-    <p class="text">
-      <a href="/other/">その他投稿一覧 へ戻る →</a>
+    <p class="text-center">
+      <a href="<?php echo esc_url(home_url()); ?>/other/" class="button button--link">その他投稿一覧へ戻る</a>
     </p>
     
   </main>

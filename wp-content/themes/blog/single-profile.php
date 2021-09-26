@@ -62,8 +62,8 @@ profile single
       
     </div>
 
-    <p class="text">
-      <a href="/profile/">プロフィール一覧 へ戻る →</a>
+    <p class="text-center">
+      <a href="<?php echo esc_url(home_url()); ?>/profile/" class="button button--link">プロフィール一覧へ</a>
     </p>
 
   </main>

@@ -1,3 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="118px" height="73px" viewBox="-0.5 -0.5 118 73"><defs/><g><rect x="50" y="29" width="60" height="20" fill="none" stroke="none" pointer-events="all"/><g fill="#D40000" font-family="Courier New" font-weight="bold" text-anchor="middle" font-size="24px"><text x="79.5" y="49.5"> BLOG</text></g><rect x="0" y="0" width="80" height="40" fill="none" stroke="none" pointer-events="all"/><g fill="#D40000" font-family="Courier New" font-weight="bold" text-anchor="middle" font-size="24px"><text x="39.5" y="30.5">SYUMI</text></g><rect x="24" y="48" width="73" height="24" fill="none" stroke="none" pointer-events="all"/><g fill="#B3B3B3" font-family="Helvetica" font-style="italic" text-anchor="middle" font-size="10px"><text x="60" y="63.5">趣味ブログ</text></g></g></svg>
+<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <text font-style="normal" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="'Calistoga'" font-size="24" id="svg_3" y="45.33502" x="21" stroke-dasharray="2,2" stroke-width="0" stroke="#000" fill="#d40000">Arsenal</text>
+  <text style="cursor: move;" font-style="normal" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="'Rounded Mplus 1c Medium'" font-size="24" id="svg_4" y="72.33502" x="45" stroke-dasharray="2,2" stroke-width="0" stroke="#000" fill="#777777">と趣味ブログ</text>
+ </g>
+
+</svg>

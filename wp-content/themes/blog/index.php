@@ -27,7 +27,7 @@ $list_src = "";
 
     <h1 class="heading-lv2">Articles - 投稿・お知らせ</h1>
 
-    <p class="text">タグ一覧</p>
+    <p class="text">タグ一覧<span class="icon_tag"></span></p>
     <?php 
     //カテゴリをリンク付きリストで出力
     foreach ( $terms as $t ) {

@@ -18,6 +18,10 @@
   border-top: double 1px var.$baseRed;
 }
 
+.heading-lv2 + .inner {
+  margin-top: 40px;
+}
+
 .inner {
   background-color: #fff;
   border-radius: 4px;
@@ -35,8 +39,15 @@
     }
     &__caption {
       color: var.$baseRed;
+      background-color: #fff;
       font-size: 14px;
       line-height: 1.6;
+      text-align: center;
+      margin-top: 16px;
+      padding: 4px 1px;
+      border: solid 2px #d30000;
+      max-width: 90px;
+      margin: 0 auto;
     }
     &__caption strong{
       text-align: center;
@@ -76,6 +87,7 @@
   }
 }
 
+//投稿詳細
 .postContent {
   margin-top: 32px;
   background: #fff;
@@ -92,7 +104,8 @@
     margin-top: 24px;
   }
   h2+p,
-  h2+ul {
+  h2+ul,
+  h3+ul {
     margin-top: 16px;
   }
   h2 {
@@ -167,4 +180,56 @@
 //other
 .text-center {
   text-align: center;
+}
+.postContent + .text-center {
+  margin-top: 64px;
+}
+.mt-5 {
+  margin-top: 5px;
+}
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-25 {
+  margin-top: 25px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+.mb-8 {
+  margin-bottom: 8px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.mb-16 {
+  margin-bottom: 16px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-25 {
+  margin-bottom: 25px;
+}
+.mb-30 {
+  margin-bottom: 30px;
 }

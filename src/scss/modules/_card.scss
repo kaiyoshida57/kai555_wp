@@ -24,9 +24,6 @@
     padding: 0 16px 16px 16px;
     text-decoration: none;
     transition: transform .3s;
-    &:hover {
-      transform: translateY(-5px);
-    }
   }
   &__image {
     position: relative;

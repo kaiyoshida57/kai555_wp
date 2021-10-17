@@ -1,0 +1,23 @@
+@use 'variables.scss' as var;
+
+.input-search {
+  padding: 0 2px;
+  &::placeholder {
+    color: var.$baseGrey;
+  }
+}
+
+.btn-search {
+  border-radius: 0;
+  border: solid 2px var.$subRed;
+  background: var.$baseRed;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: opacity .3s;
+  &:hover {
+    opacity: .7;
+  }
+}

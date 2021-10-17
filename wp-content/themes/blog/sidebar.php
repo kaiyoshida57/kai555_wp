@@ -25,7 +25,10 @@
           <?php echo the_category(); ?>
         </a> -->
       </li>
-      <!-- <li>検索</li>
+      <li>
+        <?php get_search_form(); ?>
+      </li>　
+      <!--
       <li>年別アーカイブ</li>
       <li>人気記事一覧</li> -->
       <li class="sidenav_item mt-5">Arsenal投稿のタグ<span class="icon_tag"></span>

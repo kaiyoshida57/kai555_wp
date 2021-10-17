@@ -6,7 +6,7 @@
     <?php the_post_thumbnail(); ?>
     <h2 class="articleCard__title"><?php the_title(); ?></h2>
     <p class="articleCard__text"><?php echo get_the_excerpt(); ?></p>
-    <time class="articleCard__time"><?php the_time('Y-m-d'); ?></time>
+    <time itemprop="datePublished" content="<?php the_time('Y-m-d'); ?>" class="articleCard__time"><?php the_time('Y-m-d'); ?></time>
     
     <?php
       if ( is_post_type_archive('post')) {

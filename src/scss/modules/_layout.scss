@@ -15,7 +15,32 @@
 .section-slide {
   margin-top: 80px;
   padding-top: 32px;
-  border-top: double 1px var.$baseRed;
+  border-top: solid 10px #fff;
+  position: relative;
+}
+
+.section-guidance::before,
+.section-slide::before {
+  content: "";
+  position: absolute;
+  width: 33%;
+  height: 18px;
+  left: 0;
+  top: -10px;
+  border-top: solid 10px var.$baseRed;
+  transform: skewX(-45deg);
+}
+
+.section-guidance::after,
+.section-slide::after {
+  content: "";
+  position: absolute;
+  width: calc(100% / 3);
+  height: 18px;
+  right: 0;
+  top: -10px;
+  border-top: solid 10px var.$baseRed;
+  transform: skewX( -45deg);
 }
 
 .heading-lv2 + .inner {
@@ -43,11 +68,11 @@
       font-size: 14px;
       line-height: 1.6;
       text-align: center;
-      margin-top: 16px;
+      margin-top: 20px;
       padding: 4px 1px;
       border: solid 2px #d30000;
       max-width: 90px;
-      margin: 0 auto;
+      margin: 10px auto 0;
     }
     &__caption strong{
       text-align: center;
@@ -56,34 +81,36 @@
   }
   &__box {
     background: #fff;
-    border: solid 4px var.$subYellow;
+    border: solid 4px var.$baseRed;
     text-align: center;
     padding: 20px 16px;
     flex: 1;
     margin-left: 80px;
     position: relative;
     &::before {
-      content: "";
-      background: #fff;
-      position: absolute;
-      border: #fcf264 solid 3px;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      left: -3%;
-      top: 13%;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -60px;
+    top: 10%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 60px 20px 0;
+    border-color: transparent var.$baseRed transparent transparent;
     }
-    &::after {
-      content: "";
-      background: #fff;
-      position: absolute;
-      border: #fcf264 solid 2px;
-      border-radius: 50%;
-      width: 15px;
-      height: 15px;
-      left: -6%;
-      top: 17%;
-    }
+    // &::after {
+    //   content: "";
+    //   background: #fff;
+    //   position: absolute;
+    //   border: #fcf264 solid 2px;
+    //   border-radius: 50%;
+    //   width: 15px;
+    //   height: 15px;
+    //   left: -6%;
+    //   top: 17%;
+    // }
   }
 }
 

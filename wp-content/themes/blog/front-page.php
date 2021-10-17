@@ -94,7 +94,7 @@ top page
     <section class="section-slide">
 
     <h3 class="heading-lv3">選手紹介</h3>
-    <p class="text">Arsenal選手をプロフィール交えて紹介です。</p>
+    <p class="text">Arsenalの選手をプロフィール交えての紹介です。</p>
 
 
     <ul id="js-slider" class="slide">

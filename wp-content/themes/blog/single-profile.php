@@ -18,9 +18,9 @@ profile single
       <?php the_title(); ?>
     </h1>
     <p class="textTime">
-    公開日：<?php the_time('Y-m-d'); ?>
+    公開日：<time itemprop="datePublished" content="<?php the_time('Y-m-d'); ?>" class=""><?php the_time('Y-m-d'); ?></time>
     <?php if(get_the_time('Y-m-d') !== get_the_modified_date('Y-m-d')):?>
-    更新日時：<?php the_modified_date('Y-m-d'); ?>
+    更新日時：<time itemprop="datePublished" content="<?php the_modified_date('Y-m-d'); ?>" class=""><?php the_modified_date('Y-m-d'); ?></time>
     <?php endif; ?>
     </p>
     

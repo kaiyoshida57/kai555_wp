@@ -12,6 +12,19 @@ $subPurple: #D400D4;
 $basePink: #D4006A;
 $subPink: #ff7d7d;
 $baseGrey: #777;
+$subGrey: #eee;
 $baseBlue: #3282c9;
 $subBlue: #3282c9;
 $baseBeige: #ffffc6;
+
+@mixin textShadow($color) {
+  text-shadow:
+    $color 2px 0px,  $color -2px 0px,
+    $color 0px -2px, $color 0px 2px,
+    $color 2px 2px , $color -2px 2px,
+    $color 2px -2px, $color -2px -2px,
+    $color 1px 2px,  $color -1px 2px,
+    $color 1px -2px, $color -1px -2px,
+    $color 2px 1px,  $color -2px 1px,
+    $color 2px -1px, $color -2px -1px;
+}

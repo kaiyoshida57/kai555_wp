@@ -84,7 +84,7 @@ $wpmp_conf['bp_excerpt_more'] = ' [&hellip;]';
 
 
 /* 機能を個別に有効化、無効化できます。有効化するには true を、無効化するには false を指定してください。 */
-$wpmp_conf['patch_wp_mail'] = true;
+$wpmp_conf['patch_wp_mail'] = false;
 $wpmp_conf['patch_incoming_trackback'] = true;
 $wpmp_conf['patch_incoming_pingback'] = true;
 $wpmp_conf['patch_wp_trim_excerpt'] = true;
@@ -100,5 +100,7 @@ $wpmp_conf['patch_force_twentythirteen_google_fonts_off'] = false;
 $wpmp_conf['patch_force_twentyfourteen_google_fonts_off'] = false;
 $wpmp_conf['patch_force_twentyfifteen_google_fonts_off'] = false;
 $wpmp_conf['patch_force_twentysixteen_google_fonts_off'] = false;
+$wpmp_conf['patch_force_twentyseventeen_google_fonts_off'] = false;
 $wpmp_conf['patch_sanitize_file_name'] = true;
+$wpmp_conf['patch_sanitize_feed_xml_text'] = false;
 $wpmp_conf['patch_bp_create_excerpt'] = false;
